@@ -116,10 +116,20 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         AgendarVacinacao.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         AgendarVacinacao.setText("Vacinação");
+        AgendarVacinacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgendarVacinacaoActionPerformed(evt);
+            }
+        });
         AgendarServico.add(AgendarVacinacao);
 
         AgendarConsulta.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         AgendarConsulta.setText("Consulta");
+        AgendarConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgendarConsultaActionPerformed(evt);
+            }
+        });
         AgendarServico.add(AgendarConsulta);
 
         jMenuBar1.add(AgendarServico);
@@ -179,7 +189,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     
     
     private void AgendarBanhoTosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgendarBanhoTosaActionPerformed
-        // TODO add your handling code here:
+        AgendarBanhoTosa  AgenBanho = new AgendarBanhoTosa();
+        AgenBanho.setVisible(true);
     }//GEN-LAST:event_AgendarBanhoTosaActionPerformed
 
     private void CadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadClienteActionPerformed
@@ -192,6 +203,17 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         cadAni.setVisible(true);
     }//GEN-LAST:event_CadAnimalActionPerformed
 
+    private void AgendarVacinacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgendarVacinacaoActionPerformed
+     AgendarVacinacao AgenVac = new AgendarVacinacao();
+      AgenVac.setVisible(true); 
+      
+    }//GEN-LAST:event_AgendarVacinacaoActionPerformed
+
+    private void AgendarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgendarConsultaActionPerformed
+        AgendarConsulta AgenCons = new AgendarConsulta();
+     AgenCons.setVisible(true);
+    }//GEN-LAST:event_AgendarConsultaActionPerformed
+  
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
