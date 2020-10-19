@@ -33,17 +33,19 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        Cadastrar = new javax.swing.JMenu();
+        CadCliente = new javax.swing.JMenuItem();
+        CadAnimal = new javax.swing.JMenuItem();
+        AgendarServico = new javax.swing.JMenu();
+        AgendarBanhoTosa = new javax.swing.JMenuItem();
+        AgendarVacinacao = new javax.swing.JMenuItem();
+        AgendarConsulta = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTable1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Banho e Tosa", "09/03/21", "Maria", "Rex"},
@@ -79,34 +81,55 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel4.setText("Pet Shop");
 
-        jMenu1.setText("Cad Cliente");
-        jMenuBar1.add(jMenu1);
+        Cadastrar.setText("Cadastrar");
+        Cadastrar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        jMenu2.setText("Cad Animal");
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Agendar Serviço");
-
-        jMenuItem1.setText("Banho e Tosa");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        CadCliente.setText("Cadastrar Cliente");
+        CadCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                CadClienteActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem1);
+        Cadastrar.add(CadCliente);
 
-        jMenuItem2.setText("Vacinação");
-        jMenu3.add(jMenuItem2);
+        CadAnimal.setText("Cadastrar Animal");
+        CadAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadAnimalActionPerformed(evt);
+            }
+        });
+        Cadastrar.add(CadAnimal);
 
-        jMenuItem3.setText("Consulta");
-        jMenu3.add(jMenuItem3);
+        jMenuBar1.add(Cadastrar);
 
-        jMenuBar1.add(jMenu3);
+        AgendarServico.setText("Agendar Serviço");
+        AgendarServico.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        AgendarBanhoTosa.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        AgendarBanhoTosa.setText("Banho e Tosa");
+        AgendarBanhoTosa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgendarBanhoTosaActionPerformed(evt);
+            }
+        });
+        AgendarServico.add(AgendarBanhoTosa);
+
+        AgendarVacinacao.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        AgendarVacinacao.setText("Vacinação");
+        AgendarServico.add(AgendarVacinacao);
+
+        AgendarConsulta.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        AgendarConsulta.setText("Consulta");
+        AgendarServico.add(AgendarConsulta);
+
+        jMenuBar1.add(AgendarServico);
 
         jMenu4.setText("Efetuar Venda");
+        jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Estoque");
+        jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
@@ -119,19 +142,19 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(192, 192, 192)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2)))))
-                .addContainerGap(150, Short.MAX_VALUE))
+                                .addComponent(jLabel2))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(220, 220, 220)
+                        .addComponent(jLabel1)))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,10 +165,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
                 .addGap(67, 67, 67))
         );
 
@@ -153,26 +176,39 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    
+    
+    private void AgendarBanhoTosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgendarBanhoTosaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_AgendarBanhoTosaActionPerformed
+
+    private void CadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadClienteActionPerformed
+        CadastrarCliente cadCli = new CadastrarCliente();
+        cadCli.setVisible(true);
+    }//GEN-LAST:event_CadClienteActionPerformed
+
+    private void CadAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadAnimalActionPerformed
+        CadastrarAnimal cadAni = new CadastrarAnimal();
+        cadAni.setVisible(true);
+    }//GEN-LAST:event_CadAnimalActionPerformed
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AgendarBanhoTosa;
+    private javax.swing.JMenuItem AgendarConsulta;
+    private javax.swing.JMenu AgendarServico;
+    private javax.swing.JMenuItem AgendarVacinacao;
+    private javax.swing.JMenuItem CadAnimal;
+    private javax.swing.JMenuItem CadCliente;
+    private javax.swing.JMenu Cadastrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
