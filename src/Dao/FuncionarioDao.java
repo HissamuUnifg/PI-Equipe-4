@@ -15,7 +15,7 @@ public class FuncionarioDao {
     public FuncionarioDao(){
         
         try {
-            this.conexao = DriverManager.getConnection("jdbc:mysql://localhost/teste","rubens","1234");
+            this.conexao = DriverManager.getConnection("jdbc:mysql://localhost/db_petshop","rubens","1234");
         } catch (SQLException ex) {
             Logger.getLogger(FuncionarioDao.class.getName()).log(Level.SEVERE, null, ex);
         }       
@@ -25,7 +25,7 @@ public class FuncionarioDao {
         ResultSet rs = null;
         PreparedStatement ps = null;
 
-        String query = "SELECT * FROM funcionarios WHERE nome = ?";
+        String query = "SELECT * FROM tb_funcionario WHERE cpf = ?";
         
         try{
         ps = conexao.prepareStatement(query);
