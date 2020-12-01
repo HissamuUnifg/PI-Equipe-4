@@ -1,18 +1,6 @@
-public class Cliente {
-    /*mysql> describe tb_cliente;
-+-----------+-------------+------+-----+---------+-------+
-| Field     | Type        | Null | Key | Default | Extra |
-+-----------+-------------+------+-----+---------+-------+
-| nome      | varchar(30) | YES  |     | NULL    |       |
-| sobrenome | varchar(30) | YES  |     | NULL    |       |
-| cpf       | varchar(14) | NO   | PRI | NULL    |       |
-| rg        | varchar(13) | YES  |     | NULL    |       |
-| rua       | varchar(99) | YES  |     | NULL    |       |
-| numero    | int         | YES  |     | NULL    |       |
-| bairro    | varchar(99) | YES  |     | NULL    |       |
-| telefone  | varchar(30) | YES  |     | NULL    |       |
-+-----------+-------------+------+-----+---------+-------+*/
-    
+package Classes;
+
+public class Funcionario {
     private String nome;
     private String sobrenome;
     private String cpf;
@@ -21,8 +9,9 @@ public class Cliente {
     private int numero;
     private String bairro;
     private String telefone;
+    private int codBanhotosa;
 
-    public Cliente(String nome, String sobrenome, String cpf, String rg, String rua, int numero, String bairro, String telefone) {
+    public Funcionario(String nome, String sobrenome, String cpf, String rg, String rua, int numero, String bairro, String telefone, int codBanhotosa) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.cpf = cpf;
@@ -31,6 +20,7 @@ public class Cliente {
         this.numero = numero;
         this.bairro = bairro;
         this.telefone = telefone;
+        this.codBanhotosa = codBanhotosa;
     }
 
     public String getNome() {
@@ -95,6 +85,14 @@ public class Cliente {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public int getCodBanhotosa() {
+        return codBanhotosa;
+    }
+
+    public void setCodBanhotosa(int codBanhotosa) {
+        this.codBanhotosa = codBanhotosa;
     }    
     
 }

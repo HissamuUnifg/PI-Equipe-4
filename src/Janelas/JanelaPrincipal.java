@@ -53,6 +53,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         MenuEstoque = new javax.swing.JMenu();
         GerenciarEstoque = new javax.swing.JMenuItem();
         Entrada = new javax.swing.JMenuItem();
+        MenuEstoque1 = new javax.swing.JMenu();
+        mudarCliente = new javax.swing.JMenuItem();
+        apagarCliente = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -175,6 +178,27 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(MenuEstoque);
 
+        MenuEstoque1.setText("Cliente");
+        MenuEstoque1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        mudarCliente.setText("Mudar dados do cliente");
+        mudarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mudarClienteActionPerformed(evt);
+            }
+        });
+        MenuEstoque1.add(mudarCliente);
+
+        apagarCliente.setText("Apagar cliente cadastrado");
+        apagarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                apagarClienteActionPerformed(evt);
+            }
+        });
+        MenuEstoque1.add(apagarCliente);
+
+        jMenuBar1.add(MenuEstoque1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -271,6 +295,16 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         JanelaEntrada janEntrada = new JanelaEntrada();
         janEntrada.setVisible(true);
     }//GEN-LAST:event_EntradaActionPerformed
+
+    private void apagarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apagarClienteActionPerformed
+        ApagarCliente apagarCli = new ApagarCliente();
+        apagarCli.setVisible(true);
+    }//GEN-LAST:event_apagarClienteActionPerformed
+
+    private void mudarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mudarClienteActionPerformed
+        EditarCliente editar = new EditarCliente();
+        editar.setVisible(true);
+    }//GEN-LAST:event_mudarClienteActionPerformed
   
     
 
@@ -286,6 +320,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem Entrada;
     private javax.swing.JMenuItem GerenciarEstoque;
     private javax.swing.JMenu MenuEstoque;
+    private javax.swing.JMenu MenuEstoque1;
+    private javax.swing.JMenuItem apagarCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -293,5 +329,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JMenuItem mudarCliente;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,4 +1,7 @@
-public class Funcionario {
+package Classes;
+
+public class Cliente {
+        
     private String nome;
     private String sobrenome;
     private String cpf;
@@ -7,9 +10,8 @@ public class Funcionario {
     private int numero;
     private String bairro;
     private String telefone;
-    private int codBanhotosa;
 
-    public Funcionario(String nome, String sobrenome, String cpf, String rg, String rua, int numero, String bairro, String telefone, int codBanhotosa) {
+    public Cliente(String nome, String sobrenome, String cpf, String rg, String rua, int numero, String bairro, String telefone) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.cpf = cpf;
@@ -18,8 +20,7 @@ public class Funcionario {
         this.numero = numero;
         this.bairro = bairro;
         this.telefone = telefone;
-        this.codBanhotosa = codBanhotosa;
-    }
+    }    
 
     public String getNome() {
         return nome;
@@ -83,14 +84,6 @@ public class Funcionario {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public int getCodBanhotosa() {
-        return codBanhotosa;
-    }
-
-    public void setCodBanhotosa(int codBanhotosa) {
-        this.codBanhotosa = codBanhotosa;
     }    
     
 }
